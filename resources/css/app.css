@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body,
+html {
+    scrollbar-width: none !important;
+}
+.font {
+    font-family: 'Work Sans', sans-serif !important;
+    font-optical-sizing: auto !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    font-style: normal !important;
+}
+.font-bold {
+    font-family: 'Work Sans', sans-serif !important;
+    font-optical-sizing: auto !important;
+    font-weight: 800 !important;
+    font-size: 20px !important;
+    font-style: normal !important;
+}
+.divider{
+    border-color: rgba(var(--v-theme-secondary)) !important; 
+    width: calc(100%);
+}
+.card {
+    margin: 8px !important;
+    height: 500px !important;
+    width: calc(50% - 16px) !important;
+    padding: 8px !important;
+    background-color: rgb(var(--v-theme-accent)) !important;
+}
+.card-title{
+    height: calc(50px - 8px) !important;
+    display: flex;
+    justify-content: space-between;
+}
+.inner-card{
+    padding: 8px !important;
+    height: calc(450px - 8px) !important;
+    width: 100% !important;
+    background-color: white !important;
+    display: flex !important;
+    flex-direction: column !important;
+    overflow-y: auto !important;
+}
+.header {
+    height: 64px;
+    display: flex;
+    align-items: center;
+    background-color: rgb(var(--v-theme-accent));
+    color: white;
+    padding: 20px;
+    width: 100%;
+}
+textarea:focus, input:focus{
+    outline: none !important;
+}
+.content {
+    display: flex;
+    flex-wrap: wrap;
+}
+.header-w-sub{
+    height: fit-content;
+    padding-bottom: 8px;
+}
+*:focus {
+    outline: none !;
+    box-shadow: none !important;
+  }
+  
