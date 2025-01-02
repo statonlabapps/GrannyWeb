@@ -1,0 +1,1 @@
+import{b as a,f as n,j as s,w as c,d as i,u as p,i as u}from"./app-BxcjcWUP.js";const h={__name:"BackButton",props:{whereTo:{type:String,required:!0}},setup(e){const t=e;return(r,_)=>{const o=a("v-btn");return n(),s(p(u),{href:r.route(t.whereTo)},{default:c(()=>[i(o,{class:"text-white",variant:"plain",icon:"mdi-arrow-left"})]),_:1},8,["href"])}}};export{h as _};
