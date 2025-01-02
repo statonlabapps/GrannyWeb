@@ -22,7 +22,7 @@ const mobileCheck = () => {
 const getAnalyses = async () => {
     try {
         const response = await axios.get(
-            'http://127.0.0.1:8001/api/v1/getAnalyses',
+            '/api/v1/getAnalyses',
         );
         originalImages.value = [];
         analyses.value = response.data;
@@ -42,7 +42,7 @@ const getAnalyses = async () => {
 const getOriginalImage = async (analysis_id) => {
     try {
         const response = await axios.get(
-            `http://127.0.0.1:8001/api/v1/getOriginalImage/${analysis_id}`,
+            `/api/v1/getOriginalImage/${analysis_id}`,
             { responseType: 'arraybuffer' },
         );
         const blob = new Blob([response.data]);

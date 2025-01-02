@@ -25,7 +25,7 @@ const props = defineProps({
 const abortFromSegmentation = async (destination) => {
     try {
         const response = await axios.delete(
-            'http://127.0.0.1:8001/api/v1/abortFromSegmentation/' +
+            '/api/v1/abortFromSegmentation/' +
                 page.props.analysis_id,
         );
         console.log(response.data);
@@ -37,7 +37,7 @@ const abortFromSegmentation = async (destination) => {
 const abortFromFruitRating = async (destination) => {
     try {
         const response = await axios.delete(
-            'http://127.0.0.1:8001/api/v1/abortFromSegmentation/' +
+            '/api/v1/abortFromSegmentation/' +
                 page.props.analysis_id,
         );
         console.log(response.data);
