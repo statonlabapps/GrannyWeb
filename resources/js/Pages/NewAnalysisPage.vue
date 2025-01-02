@@ -67,7 +67,7 @@ const uploadImage = async () => {
 
     try {
         const response = await axios.post(
-            'http://127.0.0.1:8001/api/v1/newAnalysis',
+            '/api/v1/newAnalysis',
             formData,
             {
                 headers: {

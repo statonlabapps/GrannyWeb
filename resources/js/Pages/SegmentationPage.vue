@@ -45,7 +45,7 @@ onMounted(() => {
 const getMaskedImage = async () => {
     try {
         const response = await axios.get(
-            `http://127.0.0.1:8001/api/v1/getMaskedImage/${props.analysis_id}`,
+            `/api/v1/getMaskedImage/${props.analysis_id}`,
             { responseType: 'arraybuffer' },
         );
         const blob = new Blob([response.data]);
@@ -58,7 +58,7 @@ const getMaskedImage = async () => {
 const getSegmentedImage = async (segment_number) => {
     try {
         const response = await axios.get(
-            `http://127.0.0.1:8001/api/v1/getSegmentedImage/${props.analysis_id}/${segment_number}`,
+            `/api/v1/getSegmentedImage/${props.analysis_id}/${segment_number}`,
             { responseType: 'arraybuffer' },
         );
         const blob = new Blob([response.data]);
@@ -71,7 +71,7 @@ const getSegmentedImage = async (segment_number) => {
 const getSegmentedImageData = async (segment_number) => {
     try {
         const response = await axios.get(
-            `http://127.0.0.1:8001/api/v1/getSegmentedImageData/${props.analysis_id}/${segment_number}`,
+            `/api/v1/getSegmentedImageData/${props.analysis_id}/${segment_number}`,
         );
         segmentedImagesData.value.push(response.data);
     } catch (error) {
@@ -82,7 +82,7 @@ const getSegmentedImageData = async (segment_number) => {
 const updateSegmentedImageData = async (segment_number) => {
     try {
         const response = await axios.get(
-            `http://127.0.0.1:8001/api/v1/getSegmentedImageData/${props.analysis_id}/${segment_number}`,
+            `/api/v1/getSegmentedImageData/${props.analysis_id}/${segment_number}`,
         );
         segmentedImagesData.value[segment_number - 1] = response.data;
     } catch (error) {
@@ -93,7 +93,7 @@ const updateSegmentedImageData = async (segment_number) => {
 const flagSegmentedImage = async (segment_number) => {
     try {
         const response = await axios.put(
-            `http://127.0.0.1:8001/api/v1/flagSegmentedImage/${props.analysis_id}/${segment_number}`,
+            `/api/v1/flagSegmentedImage/${props.analysis_id}/${segment_number}`,
         );
         console.log(response);
         updateSegmentedImageData(segment_number);
@@ -105,7 +105,7 @@ const flagSegmentedImage = async (segment_number) => {
 const getAnalysis = async () => {
     try {
         const response = await axios.get(
-            `http://127.0.0.1:8001/api/v1/getAnalysis/${props.analysis_id}`,
+            `/api/v1/getAnalysis/${props.analysis_id}`,
         );
         analysis.value = response.data;
         segmentedImages.value = [];
@@ -123,7 +123,7 @@ const fruitRating = async () => {
     rating.value = true;
     try {
         const response = await axios.put(
-            `http://127.0.0.1:8001/api/v1/fruitRating/${props.analysis_id}/${analysisType.value}`,
+            `/api/v1/fruitRating/${props.analysis_id}/${analysisType.value}`,
         );
         console.log(response.data);
         router.visit('/fruit-rating/' + analysis.value.id, { method: 'get' });

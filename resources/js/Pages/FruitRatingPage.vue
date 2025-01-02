@@ -70,7 +70,7 @@ const dialogVisible = ref(false);
 const fetchResults = async () => {
     try {
         const response = await axios.get(
-            `http://127.0.0.1:8001/api/v1/getResults/${props.analysis_id}`,
+            `/api/v1/getResults/${props.analysis_id}`,
             { responseType: 'text' },
         );
         resultsCSV.value = Papa.parse(response.data, {
@@ -84,7 +84,7 @@ const fetchResults = async () => {
 const fetchSummary = async () => {
     try {
         const response = await axios.get(
-            `http://127.0.0.1:8001/api/v1/getTraySummary/${props.analysis_id}`,
+            `/api/v1/getTraySummary/${props.analysis_id}`,
             { responseType: 'text' },
         );
         // Log the keys and values for each row in the parsed data
@@ -106,7 +106,7 @@ const fetchSummary = async () => {
 const getOriginalImage = async () => {
     try {
         const response = await axios.get(
-            `http://127.0.0.1:8001/api/v1/getOriginalImage/${props.analysis_id}`,
+            `/api/v1/getOriginalImage/${props.analysis_id}`,
             { responseType: 'arraybuffer' },
         );
         const blob = new Blob([response.data]);
@@ -120,7 +120,7 @@ const getOriginalImage = async () => {
 const getMaskedImage = async () => {
     try {
         const response = await axios.get(
-            `http://127.0.0.1:8001/api/v1/getMaskedImage/${props.analysis_id}`,
+            `/api/v1/getMaskedImage/${props.analysis_id}`,
             { responseType: 'arraybuffer' },
         );
         const blob = new Blob([response.data]);
@@ -134,7 +134,7 @@ const getMaskedImage = async () => {
 const getRatingImage = async (segment_number) => {
     try {
         const response = await axios.get(
-            `http://127.0.0.1:8001/api/v1/getRatingImage/${props.analysis_id}/${segment_number}`,
+            `/api/v1/getRatingImage/${props.analysis_id}/${segment_number}`,
             { responseType: 'arraybuffer' },
         );
         const blob = new Blob([response.data]);
@@ -148,7 +148,7 @@ const getRatingImage = async (segment_number) => {
 const getRatingImageData = async (segment_number) => {
     try {
         const response = await axios.get(
-            `http://127.0.0.1:8001/api/v1/getSegmentedImageData/${props.analysis_id}/${segment_number}`,
+            `/api/v1/getSegmentedImageData/${props.analysis_id}/${segment_number}`,
         );
         ratingImagesData.value.push(response.data);
     } catch (error) {
@@ -160,7 +160,7 @@ const getRatingImageData = async (segment_number) => {
 const getAnalysis = async () => {
     try {
         const response = await axios.get(
-            `http://127.0.0.1:8001/api/v1/getAnalysis/${props.analysis_id}`,
+            `/api/v1/getAnalysis/${props.analysis_id}`,
         );
         analysis.value = response.data;
         ratingImages.value = [];
@@ -217,7 +217,7 @@ const remainingSummaryItems = computed(() => {
 const getSegmentedImage = async (segment_number) => {
     try {
         const response = await axios.get(
-            `http://127.0.0.1:8001/api/v1/getSegmentedImage/${props.analysis_id}/${segment_number}`,
+            `/api/v1/getSegmentedImage/${props.analysis_id}/${segment_number}`,
             { responseType: 'arraybuffer' },
         );
         const blob = new Blob([response.data]);
@@ -231,7 +231,7 @@ const getSegmentedImage = async (segment_number) => {
 const getSegmentedImageData = async (segment_number) => {
     try {
         const response = await axios.get(
-            `http://127.0.0.1:8001/api/v1/getSegmentedImageData/${props.analysis_id}/${segment_number}`,
+            `/api/v1/getSegmentedImageData/${props.analysis_id}/${segment_number}`,
         );
         segmentedImagesData.value.push(response.data);
     } catch (error) {
@@ -243,7 +243,7 @@ const getSegmentedImageData = async (segment_number) => {
 const getSegmentedImages = async () => {
     try {
         const response = await axios.get(
-            `http://127.0.0.1:8001/api/v1/getSegmentedImages/${props.analysis_id}`,
+            `/api/v1/getSegmentedImages/${props.analysis_id}`,
         );
         segmentedImages2.value = response.data;
     } catch (error) {

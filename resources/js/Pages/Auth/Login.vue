@@ -77,7 +77,7 @@ const submit = () => {
                         v-model:checked="form.remember"
                         color="secondary"
                         class="font"
-                        label="Remeber Me"
+                        label="Remember Me"
                     ></v-checkbox>
                 </label>
             </div>
